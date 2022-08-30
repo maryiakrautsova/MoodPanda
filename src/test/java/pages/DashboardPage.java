@@ -12,7 +12,9 @@ public class DashboardPage {
 
     private SelenideElement textInputArea = $(By.xpath("//tr[1]/td[3]/textarea"));
 
-    private SelenideElement editProfileButton = $(By.xpath("(//ul[last()]/li[1]/a[1])[3]"));
+    //private SelenideElement editProfileButton = $(By.xpath("(//ul[last()]/li[1]/a[1])[3]"));
+    private SelenideElement editProfileButton = $(By.xpath("//aside[contains(@class, 'side-nav')]//a[text()='Edit profile ']"));
+
 
 
     public void clickDeletePostButton() {

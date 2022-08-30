@@ -3,19 +3,15 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class EditProfilePage {
-    private SelenideElement firstNameInput = $(By.xpath("(//input[contains(@class,\"input\")])[1]"));
-
+    private SelenideElement firstNameInput = $(By.xpath("//input[@placeholder='e.g Jake']"));
     private SelenideElement lastNameInitialInput = $(By.xpath("(//input[contains(@class,\"input\")])[2]"));
-
     private SelenideElement saveIdentityButton = $(By.xpath("(//div/button)[1]"));
-
     private SelenideElement memberName = $(By.xpath("//div[2]/p[1]"));
 
     public void changeFirstName() {
@@ -23,13 +19,11 @@ public class EditProfilePage {
         firstNameInput.clear();
         firstNameInput.sendKeys("TheKindestLion");
     }
-
     public void changeLastNameInitial() {
         lastNameInitialInput.shouldBe(Condition.editable, Duration.ofSeconds(10));
         lastNameInitialInput.clear();
         lastNameInitialInput.sendKeys("Peppa");
     }
-
     public void clickSaveIdentityButton() {
         saveIdentityButton.click();
     }
