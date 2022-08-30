@@ -10,9 +10,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class EditProfilePage {
     private SelenideElement firstNameInput = $(By.xpath("//input[@placeholder='e.g Jake']"));
-    private SelenideElement lastNameInitialInput = $(By.xpath("(//input[contains(@class,\"input\")])[2]"));
-    private SelenideElement saveIdentityButton = $(By.xpath("(//div/button)[1]"));
-    private SelenideElement memberName = $(By.xpath("//div[2]/p[1]"));
+    private SelenideElement lastNameInitialInput = $(By.xpath("(//input[contains(@class,'input')])[2]"));
+
+    private SelenideElement saveIdentityButton = $(By.xpath("//button[contains(text(),' Save identity')]"));
+    private SelenideElement memberName = $(By.xpath("//p[contains(@class,'title is-4 wrap')]"));
 
     public void changeFirstName() {
         firstNameInput.shouldBe(Condition.editable, Duration.ofSeconds(10));
@@ -22,7 +23,7 @@ public class EditProfilePage {
     public void changeLastNameInitial() {
         lastNameInitialInput.shouldBe(Condition.editable, Duration.ofSeconds(10));
         lastNameInitialInput.clear();
-        lastNameInitialInput.sendKeys("Peppa");
+        lastNameInitialInput.sendKeys("Fall");
     }
     public void clickSaveIdentityButton() {
         saveIdentityButton.click();

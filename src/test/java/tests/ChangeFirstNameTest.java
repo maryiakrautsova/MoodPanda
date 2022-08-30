@@ -22,7 +22,7 @@ public class ChangeFirstNameTest extends BaseTest {
         editProfilePage.clickSaveIdentityButton();
         String changedFirstName = editProfilePage.getMemberName();
         Assert.assertEquals(changedFirstName,
-                "TheKindestLion S",
+                "TheKindestLion F",
                 "First name has not been changed.");
     }
 }

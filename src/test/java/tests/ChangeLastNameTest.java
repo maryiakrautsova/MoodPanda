@@ -22,7 +22,7 @@ public class ChangeLastNameTest extends BaseTest {
         editProfilePage.clickSaveIdentityButton();
         String changedLastName = editProfilePage.getMemberName();
         Assert.assertEquals(changedLastName,
-                "TheKindestLion Peppa",
+                "TheKindestLion F",
                 "Last name has not been changed.");
     }
 }

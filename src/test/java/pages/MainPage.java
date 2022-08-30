@@ -11,12 +11,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
     private SelenideElement postUpdateButton = $(new ByText("Post update"));
+    private SelenideElement hugButton = $(By.xpath("(//a[contains(@class,'card-footer-item')])[1]"));
 
-    private SelenideElement hugButton = $(By.xpath("//div[1]/div[1]/footer/a[1]"));
+    private SelenideElement hugSentIndicator = $(By.xpath("(//a[contains(text(),'Hug sent')])[1]"));
 
-    private SelenideElement hugSentIndicator = $(By.xpath("//div[1]/div[1]/footer/a[1]"));
-
-    private SelenideElement youDashboardButton = $(By.xpath("(//div[1]/a[4])[1]"));
+    private SelenideElement youDashboardButton = $(By.xpath("//a[text()=' Your dashboard ']"));
 
     public boolean isPostUpdateDisplayed() {
         postUpdateButton.shouldBe(Condition.visible, Duration.ofSeconds(5));
